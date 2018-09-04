@@ -68,10 +68,10 @@
                     let videoIdPosition  = url.indexOf('v=') + 2;
                     let videoId = url.substring(videoIdPosition);
 
-                    let videoUrl = 'https://www.youtube.com/embed/' + videoId;
+                    let videoUrl = `https://www.youtube.com/embed/${videoId}?rel=0`;
 
                     if (this.$parent.autoplay) {
-                        videoUrl += '?autoplay=1';
+                        videoUrl += '&amp;autoplay=1';
                     }
 
                     return videoUrl;
