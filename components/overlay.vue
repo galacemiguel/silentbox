@@ -5,7 +5,7 @@
         <div id="silentbox-overlay__content" @click.stop="closeSilentboxOverlay">
             <div id="silentbox-overlay__embed">
                 <div id="silentbox-overlay__container">
-                    <iframe width="100%" height="100%" v-if="video" :src="getEmbedUrl" frameborder="0" allowfullscreen></iframe>
+                    <iframe width="100%" height="100%" v-if="video" :src="getEmbedUrl" frameborder="0" :allow="getAutoplayState" allowfullscreen></iframe>
                     <img width="auto" height="auto" :src="getEmbedUrl" v-if="! video">
                 </div>
                 <p id="silentbox-overlay__description" v-if="this.$parent.description">{{ this.$parent.description }}</p>
@@ -34,6 +34,13 @@
         computed: {
             getEmbedUrl() {
                 return this.handleUrl(this.$parent.embedUrl);
+            },
+            getAutoplayState() {
+                if (this.$parent.autoplay !== undefined && this.$parent.autoplay !== false) {
+                    return "autoplay";
+                }
+
+                return "";
             },
             isVisible() {
                 if (this.$parent.overlayVisibility !== undefined && this.$parent.overlayVisibility !== false) {
