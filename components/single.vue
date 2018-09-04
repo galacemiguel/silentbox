@@ -27,7 +27,7 @@
             'showinfo': {
                 type: Boolean,
                 default() {
-                    return true;
+                    return false;
                 }
             },
             // Short description below image.
