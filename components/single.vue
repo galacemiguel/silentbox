@@ -23,6 +23,13 @@
                     return false;
                 }
             },
+            // Show video title and player actions
+            'showinfo': {
+                type: Boolean,
+                default() {
+                    return true;
+                }
+            },
             // Short description below image.
             'description': String
         },

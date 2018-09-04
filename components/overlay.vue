@@ -74,6 +74,10 @@
                         videoUrl += '&amp;autoplay=1';
                     }
 
+                    if (!this.$parent.showinfo) {
+                        videoUrl += '&amp;showinfo=0';
+                    }
+
                     return videoUrl;
                 } else {
                     this.video = false;
